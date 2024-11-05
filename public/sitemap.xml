@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Main Pages -->
+  <url>
+    <loc>https://aipajti.com/hero</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/kezdolap"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Features Section -->
+  <url>
+    <loc>https://aipajti.com/features</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/funkciok"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Work Modes -->
+  <url>
+    <loc>https://aipajti.com/work-modes</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/mukodesi-modok"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Manager Model -->
+  <url>
+    <loc>https://aipajti.com/manager-model</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/menedzser-modell"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI Showcase -->
+  <url>
+    <loc>https://aipajti.com/ai-showcase</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/ai-bemutato"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Data Solutions -->
+  <url>
+    <loc>https://aipajti.com/data-solutions</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/adat-megoldasok"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- TTS Demo -->
+  <url>
+    <loc>https://aipajti.com/tts-demo</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/hangfelolvasas"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pricing -->
+  <url>
+    <loc>https://aipajti.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/arak"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://aipajti.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/rolunk"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Testimonials -->
+  <url>
+    <loc>https://aipajti.com/testimonials</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/velemenyek"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://aipajti.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://aipajti.com/faq</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/gyik"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://aipajti.com/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/adatvedelmi-szabalyzat"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aipajti.com/terms-of-service</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/felhasznalasi-feltetelek"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://aipajti.com/cookie-policy</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aipajti.com/hu/cookie-szabalyzat"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Special Pages -->
+  <url>
+    <loc>https://aipajti.com/404</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://aipajti.com/maintenance</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+</urlset>

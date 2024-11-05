@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #FFC600;
+  --secondary-color: #0B1437;
+  --background-color: #070B24;
+  --text-color: #FFFFFF;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 backdrop-blur-sm;
+}
+
+.btn-primary {
+  @apply bg-primary/90 text-secondary hover:bg-primary;
+}
+
+.btn-secondary {
+  @apply bg-secondary/80 text-primary border-2 border-primary/80 hover:bg-secondary-light/90;
+}
+
+.section-title {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 text-center text-primary;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bg-overlay {
+  @apply bg-background-dark/60 backdrop-filter backdrop-blur-sm;
+}
+
+.glass-panel {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-300;
+}
+
+.section-spacing {
+  @apply py-20;
+}
+
+.section-container {
+  @apply relative overflow-hidden;
+}
+
+.section-background {
+  @apply absolute inset-0 bg-gradient-to-br from-background-dark/90 to-background-light/90 backdrop-blur-sm;
+}
+
+main {
+  @apply flex-grow;
+}
+
+.container {
+  @apply mx-auto px-4;
+}
+
+/* Blog Post Content Styling */
+.blog-post {
+  @apply text-gray-300 leading-relaxed;
+}
+
+.blog-post h1 {
+  @apply text-3xl md:text-4xl font-bold text-primary mb-8 mt-6;
+}
+
+.blog-post h2 {
+  @apply text-2xl md:text-3xl font-bold text-white mb-6 mt-10;
+}
+
+.blog-post h3 {
+  @apply text-xl md:text-2xl font-semibold text-primary/90 mb-4 mt-8;
+}
+
+.blog-post p {
+  @apply mb-6 text-base md:text-lg;
+}
+
+.blog-post strong {
+  @apply text-primary font-semibold;
+}
+
+.blog-post ul, .blog-post ol {
+  @apply mb-6 pl-6;
+}
+
+.blog-post li {
+  @apply mb-2 text-base md:text-lg;
+}
+
+.blog-post ul li {
+  @apply list-disc;
+}
+
+.blog-post ol li {
+  @apply list-decimal;
+}
+
+.blog-post blockquote {
+  @apply border-l-4 border-primary pl-4 py-2 my-6 bg-primary/5 rounded-r-lg;
+}
+
+.blog-post blockquote p {
+  @apply mb-0 italic text-white;
+}
+
+.blog-post hr {
+  @apply my-8 border-gray-700;
+}
+
+.blog-post a {
+  @apply text-primary hover:text-primary/80 underline transition-colors;
+}
+
+.blog-post code {
+  @apply bg-gray-800 text-primary px-2 py-1 rounded text-sm font-mono;
+}
+
+.blog-post pre {
+  @apply bg-gray-800/50 p-4 rounded-lg overflow-x-auto mb-6;
+}
+
+.blog-post pre code {
+  @apply bg-transparent p-0;
+}
+
+.blog-post img {
+  @apply rounded-lg shadow-lg my-8 mx-auto max-w-full;
+}
+
+.blog-post table {
+  @apply w-full mb-6 border-collapse;
+}
+
+.blog-post th, .blog-post td {
+  @apply border border-gray-700 px-4 py-2;
+}
+
+.blog-post th {
+  @apply bg-gray-800 text-primary font-semibold;
+}
+
+.blog-post td {
+  @apply bg-gray-800/50;
+}
+
+/* Emoji styling */
+.blog-post h1 em, .blog-post h2 em, .blog-post h3 em {
+  @apply not-italic text-2xl mr-2;
+}
+
+/* Tips and notes styling */
+.blog-post blockquote strong {
+  @apply text-primary block mb-2;
+}

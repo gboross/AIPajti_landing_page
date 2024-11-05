@@ -1,0 +1,46 @@
+export interface PricingTranslations {
+  [key: string]: {
+    pricingTitle: string;
+    freeTier: string;
+    proPlan: string;
+    advancedPlan: string;
+    premiumPlan: string;
+    freeFeature1: string;
+    freeFeature2: string;
+    proFeature1: string;
+    proFeature2: string;
+    advancedFeature1: string;
+    advancedFeature2: string;
+    advancedFeature3: string;
+    premiumFeature1: string;
+    premiumFeature2: string;
+    premiumFeature3: string;
+    payAsYouGoFeature: string;
+    mostPopular: string;
+    choosePlan: string;
+    pricingNote: string;
+    payAsYouGoIncluded: string;
+    includedCredits: string;
+    testimonialsTitle: string;
+    testimonial1Quote: string;
+    testimonial1Author: string;
+    testimonial1Role: string;
+    testimonial2Quote: string;
+    testimonial2Author: string;
+    testimonial2Role: string;
+    testimonial3Quote: string;
+    testimonial3Author: string;
+    testimonial3Role: string;
+    faqTitle: string;
+    faq1Question: string;
+    faq1Answer: string;
+    faq2Question: string;
+    faq2Answer: string;
+    faq3Question: string;
+    faq3Answer: string;
+    faq4Question: string;
+    faq4Answer: string;
+    faq5Question: string;
+    faq5Answer: string;
+  };
+}
