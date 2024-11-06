@@ -75,5 +75,78 @@ export const managerModelTranslations: ManagerModelTranslations = {
       }
     }
   },
-  // Add other languages here following the same structure
+  hu: {
+    title: "Komplex feladat példa: Többnyelvű videoprojekt",
+    subtitle: "Nézze meg, hogyan kezeli az AIPajti Menedzser Modellje a kifinomult multimédiás projekteket",
+    examplePrompt: `Hozzon létre többnyelvű futurisztikus városi videoprojektet:
+
+1. Nyerjen ki 30 városnevet a feltöltött 'cities.xlsx' dokumentumból.
+2. Minden városhoz generáljon egyedi futurisztikus képet, amely egy nevezetes látványosságot vagy közteret mutat 2050-ből.
+3. Készítsen filmszerű, realisztikus 5 másodperces videót mind a 30 városhoz a generált képeket használva kezdőképként.
+4. Komponáljon háttérzenét a videóhoz funky stílusban, beépítve a "the future will be bright" dalszöveget, hogy illeszkedjen a vizuális elemekhez.
+5. A feltöltött 'Elon Musk Robot Theory.pdf' dokumentumból foglalja össze a kulcspontokat és készítsen 1 perces történetet Shakespeare stílusában, a legfontosabb gondolatokra fókuszálva.
+6. Fordítsa le a történetet magyarra és narráljon meleg hangú férfihangon.
+7. Egyesítse az összes 5 másodperces videót egy folyamatos videóvá.
+8. Adja hozzá a narrált hangot mint narrációs sávot az egyesített videókhoz a háttérzenével együtt.
+9. Szinkronizálja a videót franciára és kínaira.
+10. Készítsen angol feliratokat a videó minden verziójához és mentse külön .srt fájlként időkódokkal.
+11. Exportálja a végső videókat .mp4 formátumban.`,
+    selectBrainPower: "Válassza ki az AI Agyi Erő Szintjét",
+    startProcessing: "Feldolgozás indítása",
+    analyzingTask: "Feladatkövetelmények elemzése...",
+    taskCategories: "Feladatkategóriák és becslések",
+    howToProceed: "Hogyan szeretne továbblépni?",
+    trustAI: "Teljes bizalom az AI-ban",
+    reviewSteps: "Minden lépés áttekintése",
+    trustAIDescription: "Hagyja, hogy az AIPajti mindent automatikusan kezeljen. Az AI optimális döntéseket hoz minden lépésnél, biztosítva a lehető leggyorsabb befejezést magas minőség mellett. Tapasztalt felhasználóknak ajánlott, akik gyors eredményeket szeretnének.",
+    reviewStepsDescription: "Tartsa meg az irányítást a folyamat felett. Az AIPajti előnézeteket mutat és megerősítést kér minden főbb lépés előtt. Tökéletes azoknak a felhasználóknak, akik finomhangolni szeretnék az eredményeket vagy meg szeretnék tanulni, hogyan működik az AI.",
+    brainLevels: {
+      basic: {
+        name: "Alap",
+        description: "Egyszerű feladatok és alapműveletek"
+      },
+      advanced: {
+        name: "Haladó",
+        description: "Összetettebb feladatok jobb pontossággal"
+      },
+      expert: {
+        name: "Szakértő",
+        description: "Kifinomult műveletek nagy precizitással"
+      },
+      master: {
+        name: "Mester",
+        description: "Komplex többlépéses feladatok kiváló eredményekkel"
+      },
+      elite: {
+        name: "Elit",
+        description: "Fejlett AI képességek kiemelkedő eredményekkel"
+      },
+      supreme: {
+        name: "Legfelsőbb",
+        description: "Kivételes teljesítmény tökéletes pontossággal"
+      },
+      genius: {
+        name: "Zseni",
+        description: "Végső AI erő a legigényesebb feladatokhoz"
+      }
+    },
+    taskTypes: {
+      documentProcessing: {
+        name: "Dokumentumfeldolgozás",
+        timeEstimate: "1-2 perc"
+      },
+      imageGeneration: {
+        name: "Képgenerálás",
+        timeEstimate: "3-4 perc"
+      },
+      videoCreation: {
+        name: "Videókészítés",
+        timeEstimate: "8-10 perc"
+      },
+      audioProcessing: {
+        name: "Hangfeldolgozás",
+        timeEstimate: "2-3 perc"
+      }
+    }
+  }
 };

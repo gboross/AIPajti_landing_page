@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { HelmetProvider } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Language } from './i18n/types';
 import { translations } from './i18n/translations';
 import AuthModal from './components/AuthModal';
 import { theme } from './theme';
 import Layout from './components/Layout';
-import AudioBanner from './components/AudioBanner';
+import LanguageSelector from './components/LanguageSelector';
 
 // English Pages
 import HeroPage from './pages/en/HeroPage';
@@ -41,20 +42,42 @@ import BlogPageHu from './pages/hu/BlogPage';
 import FAQPageHu from './pages/hu/FAQPage';
 
 function App() {
-  const [language, setLanguage] = useState<Language>('en');
+  const { i18n } = useTranslation();
+  const navigate = useNavigate();
+  const [language, setLanguage] = useState<Language>(() => {
+    // Kezdeti nyelv beállítása az URL alapján
+    return window.location.pathname.includes('/hu/') ? 'hu' : 'en';
+  });
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState('hero');
   const [selectedBlogPost, setSelectedBlogPost] = useState<number | null>(null);
-  const [isMaintenanceMode] = useState(false); // Set to true when in maintenance mode
+  const [isMaintenanceMode] = useState(false);
 
-  const handleLogin = () => {
-    setIsAuthModalOpen(true);
-  };
+  // URL és nyelvi állapot szinkronizálása
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    const shouldBeHungarian = currentPath.includes('/hu/');
+    const currentLanguage = shouldBeHungarian ? 'hu' : 'en';
+    
+    if (currentLanguage !== language) {
+      setLanguage(currentLanguage);
+      i18n.changeLanguage(currentLanguage);
+    }
+  }, [window.location.pathname]);
 
-  const handleReadBlog = () => {
-    setSelectedBlogPost(0);
-    const blogPath = language === 'en' ? '/blog' : '/hu/blog';
-    window.location.replace(blogPath);
+  // Nyelvváltás kezelése
+  const handleLanguageChange = (newLanguage: Language) => {
+    setLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
+
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.replace(/^\/(hu\/)?/, '');
+    
+    if (newLanguage === 'hu') {
+      navigate(`/hu/${basePath}`);
+    } else {
+      navigate(`/${basePath}`);
+    }
   };
 
   if (isMaintenanceMode) {
@@ -62,42 +85,17 @@ function App() {
   }
 
   return (
-    <HelmetProvider>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <HelmetProvider>
         <Router>
-          <Layout
-            language={language}
-            onLanguageChange={setLanguage}
-            onLogin={handleLogin}
-            currentSection={currentSection}
-          >
-            <AudioBanner onReadMore={handleReadBlog} />
+          <Layout>
+            <LanguageSelector 
+              currentLanguage={language} 
+              onLanguageChange={handleLanguageChange} 
+            />
             <Routes>
-              {/* English Routes */}
-              <Route path="/" element={<Navigate to="/hero" replace />} />
-              <Route path="/hero" element={<HeroPage translations={translations.en} />} />
-              <Route path="/about" element={<AboutPage translations={translations.en} />} />
-              <Route path="/features" element={<FeaturesPage translations={translations.en} />} />
-              <Route path="/work-modes" element={<WorkModesPage translations={translations.en} />} />
-              <Route path="/manager-model" element={<ManagerModelPage translations={translations.en} />} />
-              <Route path="/ai-showcase" element={<AIShowcasePage translations={translations.en} />} />
-              <Route path="/data-solutions" element={<DataSolutionsPage translations={translations.en} />} />
-              <Route path="/tts-demo" element={<TTSDemoPage translations={translations.en} />} />
-              <Route path="/pricing" element={<PricingPage translations={translations.en} />} />
-              <Route path="/testimonials" element={<TestimonialsPage translations={translations.en} />} />
-              <Route 
-                path="/blog" 
-                element={
-                  <BlogPage 
-                    translations={translations.en} 
-                    initialSelectedPost={selectedBlogPost} 
-                  />
-                } 
-              />
-              <Route path="/faq" element={<FAQPage translations={translations.en} />} />
-
-              {/* Hungarian Routes */}
+              {/* Magyar útvonalak */}
               <Route path="/hu" element={<Navigate to="/hu/kezdolap" replace />} />
               <Route path="/hu/kezdolap" element={<HeroPageHu translations={translations.hu} />} />
               <Route path="/hu/rolunk" element={<AboutPageHu translations={translations.hu} />} />
@@ -120,6 +118,29 @@ function App() {
               />
               <Route path="/hu/gyik" element={<FAQPageHu translations={translations.hu} />} />
 
+              {/* Angol útvonalak */}
+              <Route path="/" element={<Navigate to="/home" replace />} />
+              <Route path="/home" element={<HeroPage translations={translations.en} />} />
+              <Route path="/about" element={<AboutPage translations={translations.en} />} />
+              <Route path="/features" element={<FeaturesPage translations={translations.en} />} />
+              <Route path="/work-modes" element={<WorkModesPage translations={translations.en} />} />
+              <Route path="/manager-model" element={<ManagerModelPage translations={translations.en} />} />
+              <Route path="/ai-showcase" element={<AIShowcasePage translations={translations.en} />} />
+              <Route path="/data-solutions" element={<DataSolutionsPage translations={translations.en} />} />
+              <Route path="/tts-demo" element={<TTSDemoPage translations={translations.en} />} />
+              <Route path="/pricing" element={<PricingPage translations={translations.en} />} />
+              <Route path="/testimonials" element={<TestimonialsPage translations={translations.en} />} />
+              <Route 
+                path="/blog" 
+                element={
+                  <BlogPage 
+                    translations={translations.en} 
+                    initialSelectedPost={selectedBlogPost} 
+                  />
+                } 
+              />
+              <Route path="/faq" element={<FAQPage translations={translations.en} />} />
+
               {/* Special Routes */}
               <Route path="/maintenance" element={<MaintenancePage />} />
               <Route path="*" element={<NotFoundPage />} />
@@ -127,12 +148,12 @@ function App() {
           </Layout>
           <AuthModal 
             isOpen={isAuthModalOpen} 
-            onClose={() => setIsAuthModalOpen(false)} 
+            onClose={() => setIsAuthModalOpen(false)}
             translations={translations[language]}
           />
         </Router>
-      </ThemeProvider>
-    </HelmetProvider>
+      </HelmetProvider>
+    </ThemeProvider>
   );
 }
 

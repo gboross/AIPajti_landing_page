@@ -45,8 +45,8 @@ export const blogTranslations: BlogTranslations = {
     latestPosts: "Legújabb Cikkek",
     
     // Actions
-    readMore: "Cikk Olvasása",
-    loadMore: "További Cikkek",
+    readMore: "Tovább olvasom",
+    loadMore: "Több betöltése",
     searchPosts: "Cikkek keresése...",
     
     // Categories
@@ -61,14 +61,14 @@ export const blogTranslations: BlogTranslations = {
     
     // Newsletter
     newsletterTitle: "Maradjon Naprakész az AI Innovációkkal",
-    newsletterDescription: "Kapja meg a legújabb betekintéseket és frissítéseket",
+    newsletterDescription: "Iratkozzon fel hírlevelünkre a legfrissebb hírekért",
     emailPlaceholder: "Adja meg email címét",
     subscribeButton: "Feliratkozás",
-    subscriptionSuccess: "Köszönjük a feliratkozást! Kérjük, ellenőrizze email fiókját.",
+    subscriptionSuccess: "Sikeresen feliratkozott! Kérjük, ellenőrizze email fiókját.",
     
     // Modal
-    closeModal: "Cikk Bezárása",
+    closeModal: "Bezárás",
     relatedPosts: "Kapcsolódó Cikkek",
-    sharePost: "Cikk Megosztása"
+    sharePost: "Cikk megosztása"
   }
 };

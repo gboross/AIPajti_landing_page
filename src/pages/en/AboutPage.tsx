@@ -3,6 +3,39 @@ import { Helmet } from 'react-helmet-async';
 import About from '../../components/About';
 import { TranslationStrings } from '../../i18n/types';
 
+import { generalTranslations } from '../../i18n/translations/general';
+import { featureTranslations } from '../../i18n/translations/features';
+import { pricingTranslations } from '../../i18n/translations/pricing';
+import { managerModelTranslations } from '../../i18n/translations/managerModel';
+import { blogTranslations } from '../../i18n/translations/blog';
+
+// translations/general.ts
+export const generalTranslations = {
+  en: {
+    // meglévő angol fordítások
+  },
+  hu: {
+    // meglévő magyar fordítások
+  }
+};
+
+export const translations = {
+  en: {
+    ...generalTranslations.en,
+    ...featureTranslations.en,
+    ...pricingTranslations.en,
+    ...managerModelTranslations.en,
+    ...blogTranslations.en,
+  },
+  hu: {
+    ...generalTranslations.hu,
+    ...featureTranslations.hu,
+    ...pricingTranslations.hu,  
+    ...managerModelTranslations.hu,
+    ...blogTranslations.hu,
+  }
+};
+
 interface AboutPageProps {
   translations: TranslationStrings;
 }
